@@ -358,7 +358,7 @@
         "name": "EV State of Health Battery"
       },
       "ev_battery_remain": {
-        "name": "EV Battery Level"
+        "name": "EV Battery Remaining Energy"
       },
       "ev_battery_capacity": {
         "name": "EV Battery Capacity"
