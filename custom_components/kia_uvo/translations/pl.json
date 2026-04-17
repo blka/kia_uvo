@@ -419,7 +419,7 @@
         "name": "Stan zdrowia baterii EV"
       },
       "ev_battery_remain": {
-        "name": "Poziom baterii EV"
+        "name": "Pozostała pojemność baterii EV"
       },
       "ev_battery_capacity": {
         "name": "Pojemność baterii EV"
@@ -464,16 +464,16 @@
         "name": "Średnie zużycie energii"
       },
       "front_left_seat_status": {
-        "name": "Fotel przedni lewy"
+        "name": "Podgrzewanie fotela przedniego lewego"
       },
       "front_right_seat_status": {
-        "name": "Fotel przedni prawy"
+        "name": "Podgrzewanie fotela przedniego prawego"
       },
       "rear_left_seat_status": {
-        "name": "Fotel tylny lewy"
+        "name": "Podgrzewanie fotela tylnego lewego"
       },
       "rear_right_seat_status": {
-        "name": "Fotel tylny prawy"
+        "name": "Podgrzewanie fotela tylnego prawego"
       },
       "geocode_name": {
         "name": "Geokodowana lokalizacja"
@@ -503,7 +503,7 @@
         "name": "Numer VIN"
       },
       "data": {
-        "name": "Dane"
+        "name": "Dane pojazdu"
       },
       "daily_driving_stats": {
         "name": "Statystyki jazdy dzienne"

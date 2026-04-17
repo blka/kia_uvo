@@ -319,12 +319,12 @@ class HyundaiKiaConnectSensor(SensorEntity, HyundaiKiaConnectEntity):
     ):
         """Initialize the sensor."""
         super().__init__(coordinator, vehicle)
-        self._description = description
-        self._key = self._description.key
+        self.entity_description = description
+        self._key = description.key
         self._attr_unique_id = f"{DOMAIN}_{vehicle.id}_{self._key}"
-        self._attr_icon = self._description.icon
-        self._attr_state_class = self._description.state_class
-        self._attr_device_class = self._description.device_class
+        self._attr_icon = description.icon
+        self._attr_state_class = description.state_class
+        self._attr_device_class = description.device_class
         if description.entity_category:
             self._attr_entity_category = description.entity_category
 
@@ -339,16 +339,16 @@ class HyundaiKiaConnectSensor(SensorEntity, HyundaiKiaConnectEntity):
     @property
     def native_unit_of_measurement(self):
         """Return the unit the value was reported in by the sensor"""
-        if self._description.native_unit_of_measurement == DYNAMIC_UNIT:
+        if self.entity_description.native_unit_of_measurement == DYNAMIC_UNIT:
             return getattr(self.vehicle, self._key + "_unit")
         else:
-            return self._description.native_unit_of_measurement
+            return self.entity_description.native_unit_of_measurement
 
     @property
     def state_attributes(self):
-        if self._description.key == "_geocode_name":
+        if self.entity_description.key == "_geocode_name":
             return {"address": getattr(self.vehicle, "_geocode_address")}
-        elif self._description.key == "dtc_count":
+        elif self.entity_description.key == "dtc_count":
             return {"DTC Text": getattr(self.vehicle, "dtc_descriptions")}
 
 

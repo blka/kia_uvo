@@ -61,10 +61,10 @@ class HyundaiKiaConnectButton(ButtonEntity, HyundaiKiaConnectEntity):
         vehicle: Vehicle,
     ) -> None:
         HyundaiKiaConnectEntity.__init__(self, coordinator, vehicle)
-        self._description = description
+        self.entity_description = description
         self._key = description.key
         self._attr_unique_id = f"{DOMAIN}_{vehicle.id}_{self._key}"
         self._attr_icon = description.icon
 
     async def async_press(self) -> None:
-        await getattr(self.coordinator, self._description.press_action)(self.vehicle.id)
+        await getattr(self.coordinator, self.entity_description.press_action)(self.vehicle.id)
