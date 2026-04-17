@@ -31,7 +31,7 @@ V2L_LIMIT_KEY = "ev_v2l_discharge_limit"
 NUMBER_DESCRIPTIONS: Final[tuple[NumberEntityDescription, ...]] = (
     NumberEntityDescription(
         key=AC_CHARGING_LIMIT_KEY,
-        name="AC Charging Limit",
+        translation_key="ev_charge_limits_ac",
         icon="mdi:ev-plug-type2",
         native_min_value=50,
         native_max_value=100,
@@ -40,7 +40,7 @@ NUMBER_DESCRIPTIONS: Final[tuple[NumberEntityDescription, ...]] = (
     ),
     NumberEntityDescription(
         key=DC_CHARGING_LIMIT_KEY,
-        name="DC Charging Limit",
+        translation_key="ev_charge_limits_dc",
         icon="mdi:ev-plug-ccs2",
         native_min_value=50,
         native_max_value=100,
@@ -49,7 +49,7 @@ NUMBER_DESCRIPTIONS: Final[tuple[NumberEntityDescription, ...]] = (
     ),
     NumberEntityDescription(
         key=V2L_LIMIT_KEY,
-        name="V2L Limit",
+        translation_key="ev_v2l_discharge_limit",
         icon="mdi:fuel-cell",
         native_min_value=20,
         native_max_value=80,
@@ -99,7 +99,6 @@ class HyundaiKiaConnectNumber(NumberEntity, HyundaiKiaConnectEntity):
         self._attr_unique_id = f"{DOMAIN}_{vehicle.id}_{self._key}"
         self._attr_icon = self._description.icon
         self._attr_mode = NumberMode.SLIDER
-        self._attr_name = self._description.name
         self._attr_device_class = self._description.device_class
 
     @property
