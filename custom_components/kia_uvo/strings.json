@@ -152,10 +152,10 @@
         "name": "EV First Scheduled Departure Time"
       },
       "ev_off_peak_end_time": {
-        "name": "EV Off Peak End Time"
+        "name": "Off-peak end time"
       },
       "ev_off_peak_start_time": {
-        "name": "EV Off Peak Start Time"
+        "name": "Off-peak start time"
       },
       "ev_second_departure_time": {
         "name": "EV Second Scheduled Departure Time"
@@ -219,6 +219,12 @@
       },
       "vehicle_identification_number": {
         "name": "Vehicle Identification Number"
+      },
+      "ev_v2l_max_power": {
+        "name": "V2L max power"
+      },
+      "ev_v2l_target_soc": {
+        "name": "V2L target SoC"
       }
     },
     "binary_sensor": {
@@ -392,6 +398,18 @@
       },
       "washer_fluid_warning_is_on": {
         "name": "Washer Fluid Warning"
+      },
+      "ev_off_peak_charge_only_enabled": {
+        "name": "Off-peak charge only"
+      },
+      "ev_schedule_charge_enabled": {
+        "name": "Scheduled charging"
+      },
+      "ev_v2l_status": {
+        "name": "V2L status"
+      },
+      "ev_v2x_status": {
+        "name": "V2X status"
       }
     },
     "lock": {
