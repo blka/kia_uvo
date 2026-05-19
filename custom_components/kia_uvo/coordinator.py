@@ -12,6 +12,7 @@ from hyundai_kia_connect_api import (
     ClimateRequestOptions,
     WindowRequestOptions,
     ScheduleChargingClimateRequestOptions,
+    POIInfo,
     Token,
 )
 from hyundai_kia_connect_api.exceptions import AuthenticationError
@@ -465,6 +466,18 @@ class HyundaiKiaConnectDataUpdateCoordinator(DataUpdateCoordinator):
             )
         except Exception as err:
             raise HomeAssistantError(f"Failed to set windows: {err}") from err
+        self.hass.async_create_task(
+            self.async_await_action_and_refresh(vehicle_id, action_id)
+        )
+
+    async def async_set_navigation(self, vehicle_id: str, poi_list: list[POIInfo]):
+        await self.async_check_and_refresh_token()
+        try:
+            action_id = await self.hass.async_add_executor_job(
+                self.vehicle_manager.set_navigation, vehicle_id, poi_list
+            )
+        except Exception as err:
+            raise HomeAssistantError(f"Failed to set navigation: {err}") from err
         self.hass.async_create_task(
             self.async_await_action_and_refresh(vehicle_id, action_id)
         )
