@@ -586,6 +586,9 @@
       },
       "svm_status": {
         "name": "Stato SVM"
+      },
+      "ev_charge_complete_alarm": {
+        "name": "Avviso ricarica completata"
       }
     },
     "binary_sensor": {

@@ -586,6 +586,9 @@
       },
       "svm_status": {
         "name": "SVM 状态"
+      },
+      "ev_charge_complete_alarm": {
+        "name": "充电完成提醒"
       }
     },
     "binary_sensor": {

@@ -586,6 +586,9 @@
       },
       "svm_status": {
         "name": "SVM állapot"
+      },
+      "ev_charge_complete_alarm": {
+        "name": "Töltés befejezése riasztás"
       }
     },
     "binary_sensor": {
